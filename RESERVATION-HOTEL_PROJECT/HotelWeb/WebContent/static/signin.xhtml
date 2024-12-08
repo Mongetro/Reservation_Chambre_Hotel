@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	
+	<title>Connexion
+	</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../resources/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/bootstrap/css/bootstrap.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/fonts/Linearicons-Free-v1.0.0/icon-font.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/animate/animate.css"/>
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/css-hamburgers/hamburgers.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/animsition/css/animsition.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/select2/select2.min.css"/>
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/daterangepicker/daterangepicker.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/css/util.css"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/main.css"/>
+<!--===============================================================================================-->
+ <link rel="icon" type="image/png" href="../images/logosys.png" />
+ <link rel="stylesheet" href="../resources/css/demo.css"/>
+	<link rel="stylesheet" href="../resources/css/footer-distributed-with-contact-form.css"/>
+<link rel="stylesheet" href="../resources/css/footer-distributed-with-address-and-phones.css"/>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="../Design/css/style.css" />
+       	  <link rel="stylesheet" type="text/css" href="../Design/css/demo.css" />
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css"/>
+</h:head>
+
+         
+        <!-- lucky 44739900 -->
+         
+ 
+	
+<body style="background-color: #999999;" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+	  
+	<div class="limiter">
+		
+  			
+		<div class="container-login100">
+		<a  class="up-arrow" href="#myPage" style="color:#57b846;" data-toggle="tooltip" title="En haut">
+		               <span class="glyphicon glyphicon-chevron-up" ></span>
+		               </a>
+			<div class="wrap-login100">
+			
+				<div class="login100-form-title" style="background-image: url(../images/Hotel.png);height: 50px;">					
+					<span class="login100-form-title-1">
+						KINGDOM HOTEL
+					</span>
+				</div>
+
+				<h:form id="login" class="login100-form validate-form" style="height:285px">
+					<div class="form-top" style="margin-top: -30px">
+						<div class="form-top-center">		
+						</div>
+					
+					</div>
+						 <p class="text-primary">Saisir votre email et votre mot de passe pour vous connecter</p> 
+						
+					<div  class="wrap-input100 validate-input m-b-26" data-validate="Veuillez entrer votre email">	
+						<span class="label-input100">  <span class="symbol-input100">
+						<span class="glyphicon glyphicon-envelope"></span>
+						</span></span>						
+						  <h:inputText class="input100" tabindex="1" name="username" id="username" required="true" p:placeholder="Email " value="#{connect.email}"  >           
+                </h:inputText>
+                <h:message for="username" showDetail="false" errorStyle="color:red"/>
+                <span class="focus-input100">
+                
+               
+                </span>
+               
+				</div>
+                   <!--  <img src="../logo/PadlockKey.jpg" width="70px" height="70px" style="margin-top: -50px;margin-right:-80px"/>
+					 -->	
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Veuillez entrer votre mot de passe">
+						<span class="label-input100"><span class="symbol-input100" style="margin-right:180px;">
+						<span class="glyphicon glyphicon-lock"></span>
+						</span></span>			
+						<h:inputSecret class="input100 " tabindex="2" name="pass" id="pass" p:placeholder="Mot de passe"  value="#{connect.password}" >
+                </h:inputSecret><span class="focus-input100">
+                
+                </span>
+                	
+					</div>
+
+		
+
+					<div class="container-login100-form-btn">
+					                <h:commandButton actionListener="#{connect.login()}"  class="login100-form-btn"  update="login" value="Connexion"  size="lg">
+                <i class="spinner"></i>
+      <!-- 			<span class="state">Connecter</span> -->
+      			<!-- <f:ajax execute="@form" listener="#{connect.login()}"></f:ajax> -->
+      	</h:commandButton>
+						<!--<button class="login100-form-btn">
+							Login
+						</button>-->
+				
+					</div>
+				</h:form>
+					<div class="login100-form-title" style="height:50px;">
+					<span class="login100-form-title-1" style="height:50px;">
+					
+					</span>
+				</div> 
+			</div>
+		</div>
+	</div>
+	
+	
+		
+	
+<!--===============================================================================================-->
+	<script src="../resources/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/bootstrap/js/popper.js"></script>
+	<script src="../resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../resources/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/js/main.js"></script>
+
+</body>
+</html>

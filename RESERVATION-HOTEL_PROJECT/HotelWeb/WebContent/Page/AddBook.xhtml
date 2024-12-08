@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/Page/layout.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+      <ui:define name="content">
+      <h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Réservation de chambre d'hotel</title>
+<link rel="stylesheet" type="text/css" href="../validation/bootstrap.min.css"/>
+</h:head>
+	<h:body>
+		<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="page-header">
+						<b:messages id="messages"
+            globalOnly="true"
+            severity="error,fatal,info" style="margin:auto"/>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Réserver une chambre d'hotel</h3>
+					</div>
+					<div class="panel-body">
+						<b:form  class="form-horizontal" >
+							<div class="form-group">
+								<label class="col-sm-4 control-label" for="nom">Nom</label>
+								<div class="col-sm-5">
+									<b:inputText  type="text" value="#{BookMB.firstame}" class="form-control" id="nom" name="nom" placeholder="nom" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-4 control-label" for="prenom">Prenom</label>
+								<div class="col-sm-5">
+									<b:inputText value="#{BookMB.lastname}" type="text" class="form-control"  id="prenom" name="prenom" placeholder="prenom" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-4 control-label" for="dateDeb">Date de début</label>
+								<div class="col-sm-5">
+								 <b:datepicker value="#{BookMB.startDate}" format="DD.MM.YYYY"  id="dateDeb" name="dateDeb"    >
+                                </b:datepicker>
+								
+								</div>
+							</div>
+
+								<div class="form-group">
+								<label class="col-sm-4 control-label" for="dateFin">Date fin</label>
+								<div class="col-sm-5">
+								 <b:datepicker value="#{BookMB.endDate}" format="DD.MM.YYYY"  id="dateFin" name="dateFin"   >
+                                </b:datepicker>
+								</div>
+							</div>
+<!-- itemLabel="Chambre ##{item.idRoom}   #{item.nbOfBeds} lit" -->
+							<div class="form-group">
+								<label class="col-sm-4 control-label" for="numero">Chambres disponibles</label>
+								<div class="col-sm-5">
+								  <b:selectOneMenu value="#{BookMB.room}">
+			    <f:selectItems var="item" value="#{RoomMB.getRooms()}" itemLabel="Chambre ##{item.idRoom}   #{item.nbOfBeds} lit" 
+			                                  itemValue="#{item.idRoom}"/>
+			    </b:selectOneMenu>
+								</div>
+							</div>
+				
+							<div class="form-group">
+								<div class="col-sm-9 col-sm-offset-4">
+									<b:commandButton action="#{BookMB.addBooking()}" class="btn btn-primary"  value="Ajouter"/>
+								</div>
+							</div>
+					<div class="panel-body">
+								
+							</div>
+						</b:form>
+					</div>
+				</div></div></div>
+	</div>
+<!-- 	  <script type="text/javascript" src="../validation/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../validation/jquery.validate.min.js"></script>
+	<script>
+/* $( document ).ready( function () {
+	$.validator.setDefaults( {
+		submitHandler: function (form) {
+			 form.submit();
+		}
+	} ); */
+	$( "#addBookForm" ).validate( {
+		rules: {
+			id:{
+				required:true,
+				minlength: 3
+			}, 
+			nom:{
+				required:true,
+				
+				minlength: 4
+				
+			},
+			prenom: {
+				required: true,
+				minlength: 4
+			},
+			numero: {
+				required: true,
+				digit:true 
+			},
+			dateDeb: {
+				required: true,
+				
+				
+			},
+			dateFin: {
+				required: true,
+				
+			},
+			
+		},
+		messages: {
+			id: {
+				required:"Entrer l'ID",
+			
+				minlength:"L'ID doit contenir au moins 3 lettres"
+			},
+			nom:{
+				required:"Entrer le nom",
+				minlength:"Le prenom doit contenir au moins 3 lettres"
+			},
+			prenom: {
+				required:"Entrer le prenom",
+				minlength:"Le prenom doit contenir au moins 3 lettres"
+			},
+			numero: {
+				required:"Entrer le nif",
+				minlength:"Le nif doit contenir au moins 10 lettres"
+			},
+			dateDeb: {
+				required:"Entrer la date de debut",
+				
+			},
+			dateFin: {
+				required:"Entrer la date fin",
+			
+			},
+			
+			
+		},errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+		},
+
+		
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-sm-6" ).addClass( "has-error" ).removeClass( "has-success" );
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$( element ).parents( ".col-sm-6" ).addClass( "has-success" ).removeClass( "has-error" );
+		}
+	
+	} );
+} );
+</script> -->
+	</h:body>
+	</ui:define>
+</ui:composition>

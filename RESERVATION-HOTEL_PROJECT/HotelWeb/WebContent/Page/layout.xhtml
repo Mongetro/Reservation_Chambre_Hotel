@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:gis="http://gisfaces.com"
+       xmlns:b="http://bootsfaces.net/ui"
+       xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	 <link rel="icon" type="image/png" href="../images/logosys.png" />
+		 <style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgba(93,84,240,0.5);;
+   color: white;
+   text-align: center;
+}
+</style>
+	</h:head>
+
+<h:message for="formpassword"></h:message>
+ <h:body onload="invokeVider()" style="padding-top: 50px; padding-bottom: 20px; background-color:#FFFFFF;">
+   
+  
+    <link type="text/css" rel="stylesheet" href="../Plugins/css/style.css" />
+    
+ 
+        <b:navBar style="size:80px;color:white" brand="    " brandHref="/systraui/faces/Views/overview.xhtml" inverse="true" fixed="top">
+        
+   
+          
+        <h:form >
+    <b:navbarLinks>
+<b:dropMenu  value="DECONNEXION" style="size:30px; color:white">
+                    <b:navLink  value="deconecter" href="/HotelWeb/faces/static/AddBook.xhtml"></b:navLink>                  
+                   </b:dropMenu>
+          	
+                 <b:dropMenu value="CHAMBRE" style="size:30px; color:white">
+                	<b:navLink value="Ajouter chambre " href="/HotelWeb/faces/Page/AddRoom.xhtml">
+                	
+                	</b:navLink>
+                    <b:navLink value="Lister chambre" href="/HotelWeb/faces/Page/ListerRoom.xhtml"></b:navLink>
+               </b:dropMenu>
+                
+                   <b:dropMenu  value="RESERVATION" style="size:30px; color:white">
+                    <b:navLink  value="Ajouter Reservation" href="/HotelWeb/faces/Page/AddBook.xhtml"></b:navLink>                  
+                  <b:navLink value="Lister reservation" href="/HotelWeb/faces/Page/ListerBook.xhtml"></b:navLink>
+                   </b:dropMenu>
+                
+
+             
+            </b:navbarLinks>
+            </h:form>
+            
+            
+     
+                
+        </b:navBar>
+        
+        <b:jumbotron style="">
+            <b:container >
+           	 <ui:insert name="content">
+     
+           	 </ui:insert>
+            </b:container>
+
+        </b:jumbotron>
+        <b:container>
+           
+              <div class="footer">
+            <p style="margin-left: 150px">Rservation Hotel</p>
+            </div>
+        </b:container>
+        
+
+    </h:body>
+	
+</html>
